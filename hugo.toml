@@ -1,0 +1,33 @@
+baseURL = "https://nprimeau.dev"
+languageCode = "en-us"
+title = "Nicolas Primeau"
+theme = "PaperMod"
+[pagination]
+  pagerSize = 10
+
+[params]
+  author = "Nicolas Primeau"
+  description = "Notes on building things."
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+
+[params.homeInfoParams]
+  Title = "Nicolas Primeau"
+  Content = "Notes on building things."
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/NicolasPrimeau"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  style = "github"
+  lineNos = false
