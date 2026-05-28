@@ -25,6 +25,16 @@ theme = "PaperMod"
   name = "github"
   url = "https://github.com/NicolasPrimeau"
 
+[[menus.main]]
+  name = "Posts"
+  url = "/"
+  weight = 1
+
+[[menus.main]]
+  name = "About"
+  url = "/about"
+  weight = 2
+
 [markup.goldmark.renderer]
   unsafe = true
 
