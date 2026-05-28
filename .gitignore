@@ -3,3 +3,4 @@ public/
 resources/_gen/
 .env
 .env.*
+.mcp.json
