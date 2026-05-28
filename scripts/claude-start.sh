@@ -9,18 +9,17 @@ tmux new-session -d -s "$SESSION" -c "$HOME/projects/nprimeau.dev" \
   "bash -c '. $HOME/.local/bin/env && claude --dangerously-skip-permissions'"
 
 (
-  # Wait for initial prompt
-  while ! tmux capture-pane -t "$SESSION" -p 2>/dev/null | grep -q "❯"; do
+  # Wait until the agent is fully ready (status bar appears)
+  while ! tmux capture-pane -t "$SESSION" -p 2>/dev/null | grep -q "bypass permissions"; do
     sleep 0.5
   done
   tmux send-keys -t "$SESSION" "/remote-control" Enter
 
-  # Wait for /remote-control to finish then send /context
-  sleep 2
-  while tmux capture-pane -t "$SESSION" -p 2>/dev/null | grep -qE "Thinking|Reading|Running|Bash|⏺|✽|✻|connecting"; do
-    sleep 1
+  # Wait for remote control to become active, then send /context
+  while ! tmux capture-pane -t "$SESSION" -p 2>/dev/null | grep -q "Remote Control active"; do
+    sleep 0.5
   done
-  sleep 1
+  sleep 0.5
   tmux send-keys -t "$SESSION" "/context" Enter
 ) &
 
