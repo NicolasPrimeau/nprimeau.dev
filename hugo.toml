@@ -11,7 +11,6 @@ enableInlineShortcodes = true
 [params]
   color = "gray"
   github = "NicolasPrimeau"
-  name = "Nicolas Primeau"
   bio = "Des notes sur ce que je construis. Infrastructure de données et systèmes d'IA."
 
 [markup.goldmark.renderer]
