@@ -17,10 +17,6 @@ theme = "PaperMod"
   ShowToc = true
   TocOpen = false
 
-[params.homeInfoParams]
-  Title = "Nicolas Primeau"
-  Content = "Notes on building things."
-
 [[params.socialIcons]]
   name = "github"
   url = "https://github.com/NicolasPrimeau"

@@ -1,6 +1,7 @@
 public/
 .hugo_build.lock
 resources/_gen/
+.playwright-mcp/
 .env
 .env.*
 .mcp.json
