@@ -2,35 +2,17 @@ baseURL = "https://nprimeau.dev"
 languageCode = "fr-ca"
 defaultContentLanguage = "fr"
 title = "Nicolas Primeau"
-theme = "PaperMod"
+theme = "paper"
+enableInlineShortcodes = true
+
 [pagination]
   pagerSize = 10
 
 [params]
-  author = "Nicolas Primeau"
-  description = "Des notes sur ce que je construis."
-  defaultTheme = "auto"
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = false
-  ShowCodeCopyButtons = true
-  ShowToc = true
-  TocOpen = false
-
-[[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/NicolasPrimeau"
-
-[[menus.main]]
-  name = "Notes"
-  url = "/"
-  weight = 1
-
-[[menus.main]]
-  name = "À propos"
-  url = "/about"
-  weight = 2
+  color = "gray"
+  github = "NicolasPrimeau"
+  name = "Nicolas Primeau"
+  bio = "Des notes sur ce que je construis. Infrastructure de données et systèmes d'IA."
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -38,3 +20,19 @@ theme = "PaperMod"
 [markup.highlight]
   style = "github"
   lineNos = false
+
+[menu]
+  [[menu.main]]
+    identifier = "notes"
+    name = "Notes"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "À propos"
+    url = "/about/"
+    weight = 2
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
