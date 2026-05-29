@@ -1,39 +1,39 @@
 ---
-title: "The word Artel"
+title: "Le mot « artel »"
 date: 2026-05-28
 draft: false
-tags: ["distributed systems", "artel"]
-description: "A note on where the name came from, and a thread that runs from 19th-century Russia to Leslie Lamport."
+tags: ["systèmes distribués", "artel"]
+description: "Une note sur l'origine du nom, et un fil qui relie la Russie du 19e siècle à Leslie Lamport."
 ---
 
-I was reading Kropotkin's *La Conquête du Pain* when I decided what to call the project.
+Je lisais *La Conquête du pain* de Kropotkine quand j'ai décidé comment nommer le projet.
 
-The book is about bread, or rather about who bakes it and who eats it, and whether those two groups have to be different. Kropotkin's argument is that cooperation is not a civilizational achievement layered on top of competitive human nature. It's the other way around. Cooperation is older, more durable, more productive. The historical record is full of it, if you look at the right things.
+Le livre parle de pain, ou plutôt de qui le fait et de qui le mange, et de la question de savoir si ces deux groupes doivent vraiment être différents. La thèse de Kropotkine, c'est que la coopération n'est pas une conquête de la civilisation posée par-dessus une nature humaine compétitive. C'est l'inverse. La coopération est plus ancienne, plus durable, plus productive. L'histoire en est remplie, si on regarde les bonnes choses.
 
-One of the things he looks at is the artel.
+Une des choses qu'il examine, c'est l'artel.
 
-A historical artel was a Russian worker collective: craftsmen, fishermen, or laborers who organized around a shared task, pooled resources, divided earnings, and held each other accountable without a foreman above them. No central authority. The artel decided things by consensus or custom, worked in parallel, and dissolved when the job was done. It was robust precisely because it had no single point of failure.
+L'artel historique était un collectif de travailleurs russes : des artisans, des pêcheurs ou des ouvriers qui s'organisaient autour d'une tâche commune, mettaient les ressources en commun, partageaient les gains et se tenaient mutuellement responsables sans contremaître au-dessus d'eux. Aucune autorité centrale. L'artel décidait par consensus ou par coutume, travaillait en parallèle et se dissolvait une fois le travail terminé. Il était robuste justement parce qu'il n'avait aucun point de défaillance unique.
 
-Artels were everywhere in pre-industrial Russia. Then central planning arrived, and most of them disappeared. Not because they stopped working. Because the system that replaced them required a different shape.
-
----
-
-Leslie Lamport's 1978 paper "Time, Clocks, and the Ordering of Events in a Distributed System" opens with a deceptively simple observation: a distributed system has no global clock. There is no shared ground truth about when something happened. Each process has only its own local state and whatever messages it has received.
-
-His answer was logical clocks. Each process keeps a counter. When an event occurs, increment it. When you send a message, attach your counter. When you receive a message, take the max of your counter and the sender's, then increment. That's the whole rule. From this tiny local protocol, you get a consistent global ordering of events, without a coordinator.
-
-This thread runs through everything that came after: vector clocks generalize it to track causality across processes. Gossip protocols spread state through pairwise exchanges, so information diffuses across a network without any node having a global view. CRDTs (Conflict-free Replicated Data Types) go further still: design your data structures so any two replicas can always be merged without conflict, regardless of order. Eventual consistency stops demanding agreement at every moment and asks instead for convergence over time.
-
-The through-line in all of it is the same: coherent collective behavior from local rules. No coordinator required.
-
-What strikes me is that Kropotkin was making the same argument, from history, a hundred years earlier. He was describing artels and mutual aid societies and guild structures and pointing at the same underlying principle: you don't need a central authority to get a system that works. You need the right rules for how the parts interact. The rest emerges.
-
-Kropotkin to Lamport is a straight line. One argued for it philosophically, the other proved it mathematically.
+Les artels étaient partout dans la Russie préindustrielle. Puis la planification centrale est arrivée, et la plupart ont disparu. Pas parce qu'ils avaient cessé de fonctionner. Parce que le système qui les a remplacés exigeait une autre forme.
 
 ---
 
-When I was naming the project, I wanted a word that carried this idea. Not "mesh" or "swarm" or "cluster." Those are topology words. The artel was about the *arrangement* of work: local, accountable, convergent, without hierarchy.
+L'article de 1978 de Leslie Lamport, « Time, Clocks, and the Ordering of Events in a Distributed System », s'ouvre sur une observation d'une simplicité trompeuse : un système distribué n'a pas d'horloge globale. Il n'existe aucune vérité commune sur le moment où une chose s'est produite. Chaque processus ne dispose que de son propre état local et des messages qu'il a reçus.
 
-[Artel](https://github.com/NicolasPrimeau/artel) is a coordination layer for AI agents. Each instance runs its own database and archivist. Instances replicate shared memory to each other over JSON Feed subscriptions: no central server, no shared infrastructure required. An agent on one machine can read and write memories that converge, via gossip, to every other instance that subscribes to its feed. The data model is CRDT-friendly by design: last-write-wins on individual entries, tombstones for deletions, origin-stamped records so loops short-circuit.
+Sa réponse : les horloges logiques. Chaque processus tient un compteur. Quand un événement survient, on l'incrémente. Quand on envoie un message, on y joint son compteur. Quand on reçoit un message, on prend le maximum entre son compteur et celui de l'expéditeur, puis on incrémente. C'est toute la règle. À partir de ce minuscule protocole local, on obtient un ordonnancement global cohérent des événements, sans coordinateur.
 
-The architecture reflects the philosophy because the philosophy came first. The warning is in the name.
+Ce fil traverse tout ce qui a suivi : les horloges vectorielles le généralisent pour suivre la causalité entre les processus. Les protocoles de bavardage (gossip) propagent l'état par des échanges deux à deux, de sorte que l'information se diffuse dans le réseau sans qu'aucun nœud n'ait de vue d'ensemble. Les CRDT (types de données répliquées sans conflit) vont encore plus loin : on conçoit ses structures de données de façon à ce que deux répliques puissent toujours fusionner sans conflit, peu importe l'ordre. La cohérence à terme cesse d'exiger un accord à chaque instant et demande plutôt une convergence dans le temps.
+
+Le fil conducteur est toujours le même : un comportement collectif cohérent à partir de règles locales. Aucun coordinateur requis.
+
+Ce qui me frappe, c'est que Kropotkine faisait le même argument, à partir de l'histoire, cent ans plus tôt. Il décrivait des artels, des sociétés d'entraide et des structures de guildes, et il pointait le même principe sous-jacent : pas besoin d'autorité centrale pour obtenir un système qui fonctionne. Il faut les bonnes règles sur la façon dont les parties interagissent. Le reste émerge.
+
+De Kropotkine à Lamport, c'est une ligne droite. L'un l'a défendu philosophiquement, l'autre l'a prouvé mathématiquement.
+
+---
+
+Au moment de nommer le projet, je voulais un mot qui portait cette idée. Pas « mesh », « swarm » ou « cluster ». Ce sont des mots de topologie. L'artel, lui, parlait de l'*organisation* du travail : locale, responsable, convergente, sans hiérarchie.
+
+[Artel](https://github.com/NicolasPrimeau/artel) est une couche de coordination pour des agents IA. Chaque instance fait tourner sa propre base de données et son propre archiviste. Les instances répliquent leur mémoire partagée les unes vers les autres au moyen d'abonnements JSON Feed : aucun serveur central, aucune infrastructure partagée requise. Un agent sur une machine peut lire et écrire des mémoires qui convergent, par bavardage, vers toutes les autres instances abonnées à son flux. Le modèle de données est pensé pour les CRDT : la dernière écriture l'emporte sur chaque entrée, des pierres tombales (tombstones) pour les suppressions, des enregistrements estampillés à l'origine pour que les boucles se court-circuitent.
+
+L'architecture reflète la philosophie parce que la philosophie est venue en premier. L'avertissement est dans le nom.

@@ -1,5 +1,6 @@
 baseURL = "https://nprimeau.dev"
-languageCode = "en-us"
+languageCode = "fr-ca"
+defaultContentLanguage = "fr"
 title = "Nicolas Primeau"
 theme = "PaperMod"
 [pagination]
@@ -7,7 +8,7 @@ theme = "PaperMod"
 
 [params]
   author = "Nicolas Primeau"
-  description = "Notes on building things."
+  description = "Des notes sur ce que je construis."
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = false
@@ -22,12 +23,12 @@ theme = "PaperMod"
   url = "https://github.com/NicolasPrimeau"
 
 [[menus.main]]
-  name = "Posts"
+  name = "Billets"
   url = "/"
   weight = 1
 
 [[menus.main]]
-  name = "About"
+  name = "À propos"
   url = "/about"
   weight = 2
 

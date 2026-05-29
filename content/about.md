@@ -1,14 +1,14 @@
 ---
-title: "About"
+title: "À propos"
 layout: "page"
 url: "/about"
-summary: "About Nicolas Primeau"
+summary: "À propos de Nicolas Primeau"
 ---
 
-I'm Nicolas Primeau. I build data infrastructure and AI systems, mostly in Canada.
+Je m'appelle Nicolas Primeau. Je construis de l'infrastructure de données et des systèmes d'IA, surtout au Canada.
 
-This is a notebook: things I'm thinking about, tools I'm building, ideas I want to work through in writing. Not a portfolio or a product blog.
+Ceci est un carnet : des choses auxquelles je réfléchis, des outils que je construis, des idées que je veux explorer par l'écriture. Pas un portfolio ni un blogue de produit.
 
-Current projects: [Artel](https://github.com/NicolasPrimeau/artel), a coordination layer for AI agent fleets, and [Nimbus](https://github.com/NicolasPrimeau/Nimbus), a Canadian public data platform.
+Projets en cours : [Artel](https://github.com/NicolasPrimeau/artel), une couche de coordination pour des flottes d'agents IA, et [Nimbus](https://github.com/NicolasPrimeau/Nimbus), une plateforme de données publiques canadiennes.
 
-Find me on [GitHub](https://github.com/NicolasPrimeau).
+Retrouvez-moi sur [GitHub](https://github.com/NicolasPrimeau).
