@@ -5,7 +5,7 @@ url: "/about"
 summary: "À propos de Nicolas Primeau"
 ---
 
-Je m'appelle Nicolas Primeau. Je construis de l'infrastructure de données et des systèmes d'IA, surtout au Canada.
+Je m'appelle Nicolas Primeau. Je construis de l'infrastructure de données et des systèmes d'IA.
 
 Ceci est un carnet : des choses auxquelles je réfléchis, des outils que je construis, des idées que je veux explorer par l'écriture. Pas un portfolio ni un blogue de produit.
 
