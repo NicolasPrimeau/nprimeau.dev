@@ -5,5 +5,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 article h1 {
-  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem) !important;
 }
