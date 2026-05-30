@@ -11,4 +11,4 @@ Ceci est un carnet : des choses auxquelles je réfléchis, des outils que je con
 
 Projets en cours : [Artel](https://github.com/NicolasPrimeau/artel), une couche de coordination pour des flottes d'agents IA, et [Nimbus](https://github.com/NicolasPrimeau/Nimbus), une plateforme de données publiques canadiennes.
 
-Retrouvez-moi sur [GitHub](https://github.com/NicolasPrimeau).
+Retrouvez-moi sur [GitHub](https://github.com/NicolasPrimeau) ou par courriel : [nicolas.primeau@gmail.com](mailto:nicolas.primeau@gmail.com).
