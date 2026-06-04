@@ -11,7 +11,7 @@ enableInlineShortcodes = true
 [params]
   color = "gray"
   github = "NicolasPrimeau"
-  bio = "Des notes sur ce que je construis. Infrastructure de données et systèmes d'IA."
+  bio = "Des pensées qui partent des systèmes et de l'IA, et vont un peu partout : histoire, économie, sciences, philosophie, politique, culture."
 
 [markup.goldmark.renderer]
   unsafe = true
