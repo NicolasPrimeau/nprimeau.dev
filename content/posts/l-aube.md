@@ -8,7 +8,7 @@ description: "J'ai commencé ma carrière au fond de la pile, dans le binaire. L
 
 J'ai commencé en bas de la pile.
 
-Mon bachelier était en génie informatique : moitié génie électrique, moitié logiciel. Beaucoup d'embarqué, de systèmes numériques, de matériel. Des portes logiques. Des 0 et des 1, au sens le plus littéral du terme. J'ai appris l'informatique par le fond.
+Mon baccalauréat était en génie informatique : moitié génie électrique, moitié logiciel. Beaucoup d'embarqué, de systèmes numériques, de matériel. Des portes logiques. Des 0 et des 1, au sens le plus littéral du terme. J'ai appris l'informatique par le fond.
 
 ---
 
