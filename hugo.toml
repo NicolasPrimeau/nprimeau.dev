@@ -27,10 +27,15 @@ enableInlineShortcodes = true
     url = "/"
     weight = 1
   [[menu.main]]
+    identifier = "etagere"
+    name = "Mon étagère"
+    url = "/etagere/"
+    weight = 2
+  [[menu.main]]
     identifier = "about"
     name = "À propos"
     url = "/about/"
-    weight = 2
+    weight = 3
 
 [taxonomies]
   category = "categories"
